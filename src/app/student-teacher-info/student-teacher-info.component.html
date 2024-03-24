@@ -1,0 +1,28 @@
+<!-- student-teacher-nav.component.html -->
+
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <div class="container">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./student">Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./teacher">Teacher</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col-md-4">
+        <!-- Content to display on the right side -->
+        <div>
+          <!-- Your content here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  

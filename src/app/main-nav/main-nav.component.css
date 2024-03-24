@@ -1,0 +1,27 @@
+/* src/app/main-nav/main-nav.component.css */
+
+.main-nav {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-nav li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .main-nav li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .main-nav li a:hover {
+    color: #ff9900;
+  }
+  

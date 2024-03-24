@@ -1,0 +1,24 @@
+/* src/app/header/header.component.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .header__logo img {
+    max-height: 40px;
+  }
+  
+  .header__login button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
