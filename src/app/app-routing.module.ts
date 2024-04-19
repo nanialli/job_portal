@@ -45,7 +45,7 @@ const routes: Routes = [
       {path:"info", loadChildren: () => import('./admin-info-module/admin-info-module.module').then(m => m.AdminInfoModuleModule)},
       {path:"attendance",component:AdminAtttendanceComponent, },
       {path:"event",component:UpdateEventComponent},
-      {path:"user",component:AddUserComponent},
+      {path:"user", loadChildren:() => import('./admin-add-user-module/admin-add-user-module.module').then(m => m.AdminAddUserModuleModule)},
       {path:"timetable",component:AdminTimeTableComponent},
       {path:"payments",component:PaymentsComponent}
     ]},
