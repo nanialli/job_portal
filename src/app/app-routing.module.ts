@@ -42,13 +42,8 @@ const routes: Routes = [
   {path:"login",component:LogInComponent,children:[
     {path:"admin",component:AdminNavComponent,children:[
       {path:"",redirectTo:"info",pathMatch:'prefix'},
-      {path:"info",component:AdminInfoComponent,children:[
-        {path:"",redirectTo:"nav",pathMatch:'prefix'},
-        {path:"nav",component:StudentTeacherInfoComponent,children:[
-         {path:"student",component:AdminInfoStudentListComponent}
-        ]}
-      ]},
-      {path:"attendance",component:AdminAtttendanceComponent, loadChildren: () => import('./admin-attendance-module/admin-attendance-module.module').then(m => m.AdminAttendanceModuleModule)},
+      {path:"info", loadChildren: () => import('./admin-info-module/admin-info-module.module').then(m => m.AdminInfoModuleModule)},
+      {path:"attendance",component:AdminAtttendanceComponent, },
       {path:"event",component:UpdateEventComponent},
       {path:"user",component:AddUserComponent},
       {path:"timetable",component:AdminTimeTableComponent},
