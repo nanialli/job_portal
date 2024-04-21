@@ -1,8 +1,10 @@
 <!-- add-user.component.html -->
 
 <div class="container">
-<!--     
+    
+   
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        
       <div class="form-group">
         <label for="userName">Username:</label>
         <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="user.userName" required>
@@ -12,9 +14,17 @@
         <input type="email" class="form-control" id="userEmail" name="userEmail" [(ngModel)]="user.userEmail" required>
       </div>
       <div class="form-group">
-        <label for="userRole">Role:</label>
-        <input type="text" class="form-control" id="userRole" name="userRole" [(ngModel)]="user.userRole" required>
-      </div>
+        <label>Role:</label>
+        <input type="radio" id="studentRole" name="userRole" [(ngModel)]="user.userRole" value="student">
+        <label for="studentRole">Student</label>
+        
+        <input type="radio" id="teacherRole" name="userRole" [(ngModel)]="user.userRole" value="teacher">
+        <label for="teacherRole">Teacher</label>
+        
+        <input type="radio" id="adminRole" name="userRole" [(ngModel)]="user.userRole" value="admin">
+        <label for="adminRole">Admin</label>
+    </div>
+    
       <div class="form-group">
         <label for="village">Village:</label>
         <input type="text" class="form-control" id="village" name="village" [(ngModel)]="user.village">
@@ -45,13 +55,13 @@
       </div>
       <div class="form-group">
         <label for="phnoneNo">Phone Number:</label>
-        <input type="tel" class="form-control" id="phnoneNo" name="phnoneNo" [(ngModel)]="user.phnoneNo">
+        <input type="tel" class="form-control" id="phnoneNo" name="phnoneNo" [(ngModel)]="user.phoneNo">
       </div>
       <div class="form-group">
         <label for="phnoeNo2">Alternate Phone Number:</label>
-        <input type="tel" class="form-control" id="phnoeNo2" name="phnoeNo2" [(ngModel)]="user.phnoeNo2">
+        <input type="tel" class="form-control" id="phnoeNo2" name="phnoeNo2" [(ngModel)]="user.phoneNo2">
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Add User</button>
-    </form> -->
+      <button type="submit" class="btn btn-primary" >Add User</button>
+    </form>
   </div>
   
