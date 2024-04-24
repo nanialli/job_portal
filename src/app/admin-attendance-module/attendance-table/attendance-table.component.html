@@ -1,0 +1,51 @@
+<form (ngSubmit)="submitAttendance()" #attendaceForm = "ngForm">
+    <div class="form-group">
+      <label>Select Type:</label><br>
+      <label class="form-check-label">
+        <input type="radio" name="type" value="class" [(ngModel)]="selectedType" (click)="changeType('class')"> Class
+      </label>
+      <label class="form-check-label">
+        <input type="radio" name="type" value="teacher" [(ngModel)]="selectedType" (click)="changeType('teacher')"  > Teacher
+      </label>
+    </div>
+  
+    <div *ngIf="selectedType === 'class'" class="form-group">
+      <label>Select Class:</label>
+      <select class="form-control" [(ngModel)]="selectedClass" (click)="changeClass()">
+        <!-- Populate with class options -->
+        <option *ngFor= "let class from classes">{{class}} </option>
+      </select>
+    </div>
+  
+    <div *ngIf="selectedType === 'teacher'" class="form-group">
+      <label>Select Teacher:</label>
+      <select class="form-control" [(ngModel)]="selectedTeacher">
+        <!-- Populate with teacher options -->
+      </select>
+    </div>
+    <div class="form-group">
+        <label>Date:</label>
+        <input type="date" class="form-control" [(ngModel)]="attendanceDate">
+      </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.name }}</td>
+          <td> {{student.id}}</td>
+          <td>
+            <button class="btn btn-success" (click)="markAttendance(student.id, 'present')">Present</button>
+            <button class="btn btn-danger" (click)="markAttendance(student.id , 'absent')">Absent</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button type="submit" class="btn btn-primary">Submit Attendance</button>
+  </form>
+  

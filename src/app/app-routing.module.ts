@@ -43,8 +43,8 @@ const routes: Routes = [
     {path:"admin",component:AdminNavComponent,children:[
       {path:"",redirectTo:"info",pathMatch:'prefix'},
       {path:"info", loadChildren: () => import('./admin-info-module/admin-info-module.module').then(m => m.AdminInfoModuleModule)},
-      {path:"attendance",component:AdminAtttendanceComponent, },
-      {path:"event",component:UpdateEventComponent},
+      {path:"attendance",loadChildren:() => import('./admin-attendance-module/admin-attendance-module.module').then(m => m.AdminAttendanceModuleModule) },
+      {path:"event",loadChildren:() => import('./events-module/events-module.module' ).then(m => m.EventsModuleModule)},
       {path:"user", loadChildren:() => import('./admin-add-user-module/admin-add-user-module.module').then(m => m.AdminAddUserModuleModule)},
       {path:"timetable",component:AdminTimeTableComponent},
       {path:"payments",component:PaymentsComponent}
