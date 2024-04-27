@@ -43,6 +43,7 @@ const routes: Routes = [
   {path:"login",component:LogInComponent,children:[
     {path:"admin",component:AdminNavComponent,children:[
       {path:"",redirectTo:"info",pathMatch:'prefix'},
+<<<<<<< HEAD
       {path:"info",component:AdminInfoComponent,children:[
         {path:"",redirectTo:"nav",pathMatch:'prefix'},
         {path:"nav",component:StudentTeacherInfoComponent,children:[
@@ -60,6 +61,12 @@ const routes: Routes = [
       {path:"user",
       loadChildren:() => import('./add-user-module/add-user-module.module').then(m => m.AddUserModuleModule)
       },
+=======
+      {path:"info", loadChildren: () => import('./admin-info-module/admin-info-module.module').then(m => m.AdminInfoModuleModule)},
+      {path:"attendance",loadChildren:() => import('./admin-attendance-module/admin-attendance-module.module').then(m => m.AdminAttendanceModuleModule) },
+      {path:"event",loadChildren:() => import('./events-module/events-module.module' ).then(m => m.EventsModuleModule)},
+      {path:"user", loadChildren:() => import('./admin-add-user-module/admin-add-user-module.module').then(m => m.AdminAddUserModuleModule)},
+>>>>>>> df72948edd1a7b0bd6f8e3487ab7027ea24321b5
       {path:"timetable",component:AdminTimeTableComponent},
       {path:"payments",component:PaymentsComponent}
     ]},

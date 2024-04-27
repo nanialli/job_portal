@@ -1,0 +1,34 @@
+<!-- admin-info-student-list.component.html -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="classDropdown">Select Class:</label>
+            <!-- [(ngModel)]="selectedClass" (change)="onClassChange()" -->
+            <select class="form-control" id="classDropdown">
+              <!-- *ngFor="let className of classNames" [value]="className"  -->
+              <!-- {{ className }} -->
+              <option></option>
+            </select>
+          </div>
+        </div>
+      </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Name</th>
+          <th>Class</th>
+        </tr>
+      </thead>
+      <tbody>
+         <!-- <tr *ngFor="let student of students; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.class }}</td>
+        </tr>  -->
+      </tbody>
+    </table>
+  </div>
+  

@@ -15,9 +15,15 @@ import { AdminInfoTeacherListComponent } from './admin-info-teacher-list/admin-i
   declarations: [
     AppComponent,
    allcomponents,
+<<<<<<< HEAD
    AdminInfoTeacherListComponent,
    HttpClientModule,
    ],
+=======
+  
+   
+  ],
+>>>>>>> df72948edd1a7b0bd6f8e3487ab7027ea24321b5
   
   imports: [
     BrowserModule,
