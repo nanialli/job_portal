@@ -29,6 +29,7 @@ import { StudentTeacherInfoComponent } from './student-teacher-info/student-teac
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
 import { AdminInfoStudentInfoComponent } from './admin-info-student-info/admin-info-student-info.component';
 import { AdminInfoStudentListComponent } from './admin-info-student-list/admin-info-student-list.component';
+import { AdminInfoTeacherListComponent } from './admin-info-teacher-list/admin-info-teacher-list.component';
 
 
 const routes: Routes = [
@@ -45,12 +46,20 @@ const routes: Routes = [
       {path:"info",component:AdminInfoComponent,children:[
         {path:"",redirectTo:"nav",pathMatch:'prefix'},
         {path:"nav",component:StudentTeacherInfoComponent,children:[
-         {path:"student",component:AdminInfoStudentListComponent}
-        ]}
+         {path:"student",component:AdminInfoStudentListComponent},
+         {path:"teacher",component:AdminInfoTeacherListComponent},
+        ]},
       ]},
-      {path:"attendance",component:AdminAtttendanceComponent, loadChildren: () => import('./admin-attendance-module/admin-attendance-module.module').then(m => m.AdminAttendanceModuleModule)},
-      {path:"event",component:UpdateEventComponent},
-      {path:"user",component:AddUserComponent},
+      {
+        path: "attendance",
+        loadChildren: () => import('./admin-attendance-module/admin-attendance-module.module').then(m => m.AdminAttendanceModuleModule)
+      } ,
+      {path:"events",
+        loadChildren:() => import('./admin-events-module/admin-events-module.module').then(m => m.AdminEventsModuleModule)
+      },
+      {path:"user",
+      loadChildren:() => import('./add-user-module/add-user-module.module').then(m => m.AddUserModuleModule)
+      },
       {path:"timetable",component:AdminTimeTableComponent},
       {path:"payments",component:PaymentsComponent}
     ]},
